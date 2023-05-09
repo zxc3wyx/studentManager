@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>添加页面</title>
+    <script src="../dist/vue.runtime.mjs"></script>
+</head>
+<body>
+<div id="app" style="text-align: center;">
+    <h3>学生信息添加页面</h3>
+    <form @submit.prevent="addStudent">
+        <label>学生姓名:</label>
+        <label>
+            <input type="text" v-model="name">
+        </label><br>
+        <label>学生年龄:</label>
+        <label>
+            <input type="text" v-model.number="age">
+        </label><br>
+        <label>学生性别:</label>
+        <label>
+            <input type="radio" v-model="gender" value="男">
+        </label>男
+        <label>
+            <input type="radio" v-model="gender" value="女">
+        </label>女<br>
+        <input type="submit" value="提交">
+    </form>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            name: '',
+            age: '',
+            gender: '男'
+        },
+        methods: {
+            addStudent() {
+                // 处理提交逻辑
+                console.log('姓名:', this.name)
+                console.log('年龄:', this.age)
+                console.log('性别:', this.gender)
+            }
+        }
+    })
+</script>
+</body>
+</html>
